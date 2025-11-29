@@ -1,0 +1,5 @@
+# No external dependencies required for core functionality
+# The tool uses only Python standard library
+
+# Optional: for development/testing
+pytest>=7.0.0
