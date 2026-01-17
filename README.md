@@ -19,7 +19,7 @@ A static analysis tool that scans Solidity smart contracts for re-entrancy vulne
 
 1. Clone the repo
 ```sh
-   git clone https://github.com/yourusername/reentrancy-detector.git
+   git clone https://github.com/toov00/reentrancy-detector.git
 ```
 2. Navigate to project directory
 ```sh
@@ -77,6 +77,17 @@ A static analysis tool that scans Solidity smart contracts for re-entrancy vulne
 - [x] Detect missing reentrancy guards
 - [x] Detect cross-function reentrancy
 - [x] JSON/Markdown/Text output formats
+- [x] VS Code extension (see `vscode-extension/` directory for manual installation)
 - [ ] Support for Vyper contracts
-- [ ] VS Code extension
 - [ ] GitHub Actions integration
+
+## VS Code Extension
+
+A VSCode extension is available in the `vscode-extension/` directory. To use it:
+
+1. Install the Python package: `pip install -e .`
+2. Build the extension: `cd vscode-extension && npm install && npm run compile && npm run package`
+3. Install: `code --install-extension reentrancy-detector-1.0.0.vsix`
+4. Configure Python path in VSCode settings if needed
+
+See `vscode-extension/README.md` for detailed instructions.

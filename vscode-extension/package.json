@@ -1,0 +1,106 @@
+{
+  "name": "reentrancy-detector",
+  "displayName": "Solidity Re-entrancy Checker",
+  "description": "Checks Solidity code for re-entrancy patterns and shows results in the Problems panel.",
+  "version": "1.0.0",
+  "publisher": "toov00",
+  "license": "MIT",
+  "author": {
+    "name": "toov00",
+    "email": "toov_00@outlook.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/toov00/reentrancy-detector.git"
+  },
+  "bugs": {
+    "url": "https://github.com/toov00/reentrancy-detector/issues"
+  },
+  "homepage": "https://github.com/toov00/reentrancy-detector#readme",
+  "engines": {
+    "vscode": "^1.75.0"
+  },
+  "categories": [
+    "Linters"
+  ],
+  "keywords": [
+    "solidity",
+    "linter",
+    "code-checker"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "reentrancy-detector.scan",
+        "title": "Check for Re-entrancy"
+      },
+      {
+        "command": "reentrancy-detector.scanWorkspace",
+        "title": "Check Workspace for Re-entrancy"
+      }
+    ],
+    "configuration": {
+      "title": "Re-entrancy Checker",
+      "properties": {
+        "reentrancy-detector.enable": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable the checker"
+        },
+        "reentrancy-detector.runOnSave": {
+          "type": "boolean",
+          "default": true,
+          "description": "Check files automatically on save"
+        },
+        "reentrancy-detector.severityThreshold": {
+          "type": "string",
+          "enum": [
+            "critical",
+            "high",
+            "medium",
+            "low",
+            "info"
+          ],
+          "default": "low",
+          "description": "Minimum severity to show"
+        },
+        "reentrancy-detector.pythonPath": {
+          "type": "string",
+          "default": "python3",
+          "description": "Python interpreter path"
+        },
+        "reentrancy-detector.analyzerPath": {
+          "type": "string",
+          "default": "",
+          "description": "Custom analyzer script path (optional)"
+        }
+      }
+    },
+    "languages": [
+      {
+        "id": "solidity",
+        "aliases": [
+          "Solidity",
+          "sol"
+        ],
+        "extensions": [
+          ".sol"
+        ]
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "package": "vsce package",
+    "lint": "eslint src --ext ts"
+  },
+  "devDependencies": {
+    "@types/node": "^18.0.0",
+    "@types/vscode": "^1.75.0",
+    "typescript": "^4.9.0"
+  },
+  "dependencies": {}
+}
