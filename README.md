@@ -64,7 +64,7 @@ python -m src.cli scan contract.sol --quiet
 python -m src.cli scan contract.sol --no-color
 ```
 
-Available severity levels: `critical`, `high`, `medium`, `low`, `info`
+>> Available severity levels: `critical`, `high`, `medium`, `low`, `info`
 
 ## Example Output
 
